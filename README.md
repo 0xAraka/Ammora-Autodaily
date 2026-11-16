@@ -78,33 +78,57 @@ Jika Anda memiliki stok proxy, masukkan daftar proxy Anda ke dalam file `proxy.t
 
 ## 💻 Panduan Perintah (CLI)
 
+Perintah dapat dijalankan via `main.py` atau `ammora_bot.py`:
+
 ### 1. Cek Status Akun & Saldo On-Chain
 Menampilkan total AP, ranking leaderboard, dan saldo ETH / $tAMM di testnet:
 ```bash
-python ammora_bot.py status
+python main.py status
 ```
 
 ### 2. Jalankan 1 Siklus Panen Harian Penuh (Rekomendasi ⭐)
 Mengeksekusi seluruh 4 misi harian (Check-in + Vault Deposit + 5x Swaps + Staking) secara berurutan dengan jeda natural anti-sybil:
 ```bash
-python ammora_bot.py cycle
+python main.py cycle
 ```
 
 ### 3. Klaim Seluruh Misi Sosial (One-Time +350 AP)
 Klaim instan untuk 7 misi sosial bawaan Ammora:
 ```bash
-python ammora_bot.py socials
+python main.py socials
 ```
 
 ### 4. Kirim Postingan X Mingguan (+300 AP)
 ```bash
-python ammora_bot.py weekly https://x.com/username/status/1234567890
+python main.py weekly https://x.com/username/status/1234567890
 ```
 
 ### 5. Jalankan Daemon 24/7 Tanpa Henti
 Menjalankan bot di latar belakang secara berkelanjutan. Bot akan otomatis panen setiap 24 jam sekali ditambah jeda acak 15–45 menit:
 ```bash
-python ammora_bot.py daemon
+python main.py daemon
+```
+
+---
+
+## 📁 Struktur Proyek (Clean & Modular)
+
+```text
+Ammora-Autodaily/
+├── core/
+│   ├── __init__.py           # Package exports
+│   ├── constants.py          # Contract ABIs, GIWA addresses, endpoints
+│   ├── client.py             # Ammora API Client (EIP-191 Auth, Missions)
+│   ├── web3_engine.py        # GIWA Sepolia Web3 Engine (Vault, DEX Swaps, Staking)
+│   ├── proxy_manager.py      # Stock proxy parser & dynamic rotator
+│   └── orchestrator.py       # Workflow routines, cycle runner & daemon
+├── main.py                   # Primary CLI entry point
+├── ammora_bot.py             # Backward compatibility wrapper
+├── proxy.txt                 # Stock proxy list
+├── requirements.txt          # Python dependencies
+├── .env.example              # Configuration template
+├── .gitignore                # Git ignore rules
+└── README.md                 # Documentation
 ```
 
 ---

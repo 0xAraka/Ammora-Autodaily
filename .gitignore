@@ -1,0 +1,22 @@
+# Environment & Secrets
+.env
+*.session.json
+ammora_session.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Logs & Temp
+*.log
+scratch/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

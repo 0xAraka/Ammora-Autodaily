@@ -1,0 +1,19 @@
+# ========================================================
+# AMMORA BOT — PROXY STOCK LIST (proxy.txt)
+# ========================================================
+# Masukkan daftar proxy Anda di sini (satu baris satu proxy).
+# Format yang didukung:
+# 1) http://username:password@ip:port
+# 2) socks5://username:password@ip:port
+# 3) ip:port:username:password
+# 4) ip:port
+#
+# Baris yang diawali dengan tanda pagar (#) akan diabaikan.
+# Kosongkan file ini jika ingin menggunakan koneksi langsung (direct) tanpa proxy.
+# ========================================================
+
+# Contoh format:
+# http://user123:pass456@198.51.100.25:8080
+# socks5://user123:pass456@198.51.100.26:1080
+# 198.51.100.27:8080:myuser:mypass
+# 198.51.100.28:8080
